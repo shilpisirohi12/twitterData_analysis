@@ -26,8 +26,9 @@ except:
 # Fetching Data
 def fetch_data(queryString):
     twitter_data=[]
+    twitter_data.append(["created_at","id","hashtags","tweet_text"])
     count=1
-    for row in tweepy.Cursor(api.search, q=queryString, tweet_mode="extended", lang="en",result_type="recent").items(1000):
+    for row in tweepy.Cursor(api.search, q=queryString, tweet_mode="extended", lang="en",result_type="recent").items(5000):
     # data = api.search(q=queryString,tweet_mode='extended', lang="en",result_type='recent', count=5)
         print(count)
         print(row)
